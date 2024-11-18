@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Bài 2</title>
+</head>
+<body>
+    <p>Kiểm tra tên</p> <input type="text" id="inputC">
+    <button onclick="NhapTen()">Nhập</button>
+</body>
+<script>
+    function NhapTen()
+    {
+        let c = document.getElementById("inputC").value;
+
+        if ( c =="Phu")
+        {
+            alert("Đúng rồi");
+        }
+        else
+        {
+            alert("Sai rồi");
+        }
+    }
+
+//     Ví dụ 2 Nhập vào ô input 1 giá trị
+// Hãy kiểm tra giá trị được nhập là "Phu" hay ko
+// Nếu nhập là Phu thì hiển thị alert là "Đúng rồi"
+// Còn nhập khác thì hiển thị alert là "Sai rồi"
+</script>
+</html>

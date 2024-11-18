@@ -1,0 +1,182 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Học lập trình Javascript</title>
+  </head>
+  <body>
+    <p id="content1"></p>
+    <h2>Xin chào độc giả kungfutech</h2>
+    <input type="text" id="taikhoan"/>
+    <button onclick="CheckDangNhap()">Đăng nhập</button>
+    <span style=" color: red; display: none;" id="content"></span>
+    <!-- Hàm tương tác với người dùng alert, confirm, prompt -->
+
+  </body>
+  <script src="content.js"></script>
+  <script>
+          let test1 = 3;
+          let test2 = 2;
+        //   var result1 = test1 ?? test2;
+          
+        // cách 1 if(test1)
+        // cách 2 if(test1 != null)
+          if(test1)
+          {
+            var result1 = test1;
+          }
+          else
+          {
+            var result1 = test2;
+          }
+        //   console.log(result1);
+        
+
+          // switch - case
+        //   const x = 2 + 3;
+        //   const y = 2 + 3;
+        // x = 3
+            // switch (x) {
+            // case 4:
+            //     console.log("Less than");
+            //     break;
+            // case 5:
+            //     console.log("Equal");
+            //     break;
+            // case 6:
+            //     console.log("Greater than");
+            //     break;
+            // default:
+            //     console.log("Don't know the answer");
+            // } 
+
+            // // x = 3
+
+            
+            // if(x == 4 && y == 5 )
+            // {
+            //     console.log("Less than");
+            // }
+            // else if(x == 5)
+            // {
+            //     console.log("Equal");
+            // }
+            // else if(x == 6)
+            // {
+            //     console.log("Greater than");
+            // }
+            // else
+            // {
+            //     console.log("Don't know the answer");
+            // }
+
+
+                // let x = "3";
+                // let v = 0;
+                // // x = 3 , switch : 2
+                // switch (x - 1) {
+                // case v + 1:
+                //     console.log("case 1");
+                //     break;
+                // case v + 2:
+                //     console.log("case 2");
+                //     break;
+                // default:
+                //     console.log("default");
+                // }
+
+                const n = 3;
+
+                    switch (n) {
+                    case 4:
+                        console.log("Hello!");
+                        break;
+                    case 3:
+                    case 5:
+                        console.log("Hi!");
+                        break;
+                    default:
+                        console.log("Bye!");
+                    }
+
+
+                    let x = 3;
+
+                    switch (x) {
+                    case "3":
+                        console.log("string");
+                        break;
+                    case 3:
+                        console.log("number");
+                        break;
+                    default:
+                        console.log("unknown");
+                        break;
+                    }
+
+
+                // vong lap for, while, do while
+                let count = 1;
+
+                while (count <= 3) {
+                console.log("Hiên thị count =",count);
+                //count = count + 1;\
+                count ++;
+                }
+                // count = 1:
+                // L1: Hiển thị count = 1
+                // count = 2:
+                // L2: Hiển thị count = 2
+                // count = 3:
+                // L3 : hiển thị count = 3
+                // count = 4 => thì kết thúc vòng lặp
+
+                let n1 = 3;
+                while (n1 != 0) {
+                console.log("Hiên thị n =",n1);
+                n1--; // Giá trị của n giảm đi 1 đơn vị sau mỗi lượt lặp
+                }
+                //n1 = 3
+                // L1 : Hiẻn thị n = 3
+                // n1 = 2
+                // L2 : Hiển thị n = 2
+                // n1 = 1 
+                // L3 : hIỂN THỊ n = 1
+                // n = 0 dừng chương trình
+                let count1 = 1;
+
+                do {
+                console.log(count1);
+                count1++;
+                } while (count1 <= 3);
+                
+                //count1 = 1
+                // L1: Hiển thị count 1 
+                //count1 = 2
+                // L2 : hIỂN THỊ COUNT 2
+                //count1 = 3
+                // L3 : Hiển thị count 3
+                //count1 = 4 // dừng
+                
+                // for
+                // count =1 là vị trí bắt đầu
+                // count =3 là vị trí kết thúc
+0
+                for (let count = 1; count <= 3; count++) {
+                    console.log("Hiển thị n =",count);
+                }
+                //count = 1
+                // Hiển thị n = 1
+                // count = 2
+                // Hiển thị n = 2
+                // count = 3
+                // Hiển thị n = 3
+                // count = 4- Dừng
+
+//
+
+  </script>
+</html>
+
+<!-- Tao thẻ p với id là content1, gán giá trị của thẻ p là "Xin chào mọi người" -->
+
+

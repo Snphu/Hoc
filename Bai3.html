@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Bài 3</title>
+</head>
+
+<body>
+    <p> Số thứ nhất </p> <input type="text" id="inputA">
+    <p> Số thứ hai </p><input type="text" id="inputB">
+    <button type="button" onclick="TinhTongChiaHetCho2()">Tính tổng</button>
+</body>
+<script>
+    function TinhTongChiaHetCho2(){
+        let a = parseInt(document.getElementById("inputA").value, 10);
+        let b = parseInt(document.getElementById("inputB").value, 10);
+
+        if ( a == "" && b == "") 
+        {
+            alert("Hãy nhập số");
+            return;
+        }
+        else if ( a=="")
+        {
+            alert("Hãy nhập số thứ nhất");
+            return
+        }
+        else if ( b=="")
+        {
+            alert("Hãy nhập số thứ hai");
+            return
+        }
+        else if( a >= b)
+        {
+            alert("Ô thứ nhất phải nhỏ hơn ô thứ hai");
+            return;
+        }
+
+
+        let tong = 0;
+        // nhập số a = 1 số b  = 15
+        //
+        for ( let count = a; count <= b; count++)
+        {
+            if( count % 2 == 0 )
+            {
+                tong = tong + count;
+                alert(tong);
+            }
+        }    
+//  Tổng 2 số a và b chia hết cho 2 
+    }
+
+    alert(1 + ', ' + 2);
+
+</script>
+</html>

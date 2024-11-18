@@ -1,0 +1,182 @@
+<!--Bài 1 Tính tổng ước số chung của 60 -->
+<!--Bài 2 Tính tổng ước số chung của số được nhập từ ô input, validate nó khi <0 và > 100 , hoặc nhập gì -->
+<!-- for từ 1 đến 60
+for từ 1 đến n -->
+<!-- Bài 3 Tính tổng các số nhân lại với nhau từ 1 đến 10 -->
+
+<!-- Bài 4 Tính tổng các số nhân lại với nhau từ 1 đến số được nhập từ ô input , validate số < 0 hoặc ko nhập gì-->
+
+<!-- Bài 5 : Nhập 3 số từ ô input validate số đầu phải nhỏ hơn số tiếp theo, hoặc k nhập gì-->
+<!-- Tính tổng 3 số  và tính tổng 3 số đó nhân đôi, Sau đó in ra alert 2 giá trị là tổng và tổng được nhân đôi -->
+<!-- alert(1 + ', ' + 2); -->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTVN B7</title>
+</head>
+<body>
+    <p> Nhập số </p> <input type="text" id="inputA">
+    <p> Nhập số </p> <input type="text" id="inputB">
+    <p> Nhập số </p> <input type="text" id="inputC">
+    <button onclick="Tinh()">Tính</button>
+</body>
+<script>
+    // // Bài 1
+
+    // let tong = 0;
+
+    // for ( let count=1; count <=60; count++)
+    // {
+    //     if ( 60 % count == 0)
+    //     {
+    //         tong = tong + count;
+    //     }
+    // }
+    // alert(tong);
+    
+    // vd ước chung của 10
+    // v1: count=1; tong=1
+    // v2: count=2; tong =3
+    // v3: count=3; tong =3
+    // v4: count=4; tong=3
+    // v5: count=5; tong=8
+    // v6: count=6; tong=8
+    // v7: count=7; tong=8
+    // v8; count=8; tong=8
+    // v9: count=9; tong=8
+    // v10:count=10; tong= 18
+
+
+    
+
+    // Bài 2 
+    // function Tinh()
+    // {
+    //     let a =document.getElementById("inputA").value;
+
+    //     if ( a=="")
+    //     {
+    //         alert("Phải nhập số");
+    //         return;
+    //     }
+    //     else if( a <= 0 )
+    //     {
+    //         alert("Số phải lớn hơn 0");
+    //         return;
+    //     }
+    //     else if ( a > 100)
+    //     {
+    //         alert("Số phải bé hơn 100");
+    //         return;
+    //     }
+
+    //     let tong = 0;
+        
+    //     for (let count=1; count <= a; count++)
+    //     {
+    //         if ( a % count == 0)
+    //         {
+    //             tong= tong + count;
+    //         }
+    //     }
+    //     alert('Kết quả là ' +tong);
+    // }
+
+
+
+
+        // for từ 1-60
+        // let tong = 0;
+        // for (let count=1; count <=60; count++)
+        // {
+        //     tong = tong + count;
+        // }
+        // console.log("Hiển thị n =",tong);
+        // alert(tong)
+
+// Bài 3
+ 
+// let nhan = 1;
+// for ( let count=1; count <=10; count++)
+// {
+//     nhan = nhan * count;
+// }
+
+// alert(nhan);
+
+// Bài 4:
+
+// function Tinh()
+// {
+//     let a =document.getElementById("inputA").value;
+    
+//     if(a=="")
+//     {
+//         alert("Phải nhập số");
+//         return;
+//     }
+//     else if ( a =< 0 )
+//     {
+//         alert("Số phải lớn hơn 0")
+//         return;
+//     }
+
+//     let nhan = 1;
+//     for ( let count=1; count<= a; count++)
+//     {
+//         nhan = nhan * count;
+//     }
+//    alert(nhan); 
+// }
+
+// Bài 5:
+
+function Tinh()
+{
+    let a =parseInt(document.getElementById("inputA").value, 10);
+    let b =parseInt(document.getElementById("inputB").value, 10);
+    let c =parseInt(document.getElementById("inputC").value, 10);
+
+    if(a == b == c)
+    {
+        alert("Các số không được giống nhau");
+        return;
+    }
+    if( a > b && b > c)
+    {
+        alert("Số thứ nhất phải nhỏ hơn số thứ hai, số thứ 2 phải nhỏ hơn số thứ 3");
+        return;
+    }
+    else if( a > c && b> c)
+    {
+        alert("Số thứ nhất phải nhỏ hơn số thứ ba, số thứ 2 phải nhỏ hơn số thứ 3");
+        return;
+    }
+    else if( b > c)
+    {
+        alert("Số thứ hai phải nhỏ hơn số thứ ba");
+        return;
+    }
+
+    let abc= (a+b+c);
+    let bca= (a*2 + b*2 + c*2);
+
+    alert(abc + ', ' + bca);
+
+}
+
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+

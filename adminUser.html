@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Quản lý sản phẩm</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+
+      background-size: cover;
+    }
+
+    .popup {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      /* Đảm bảo popup nằm trên các phần tử khác */
+    }
+
+    .popup-content {
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      width: 90%;
+      /* Chiều rộng tối đa */
+      position: relative;
+    }
+
+    .popup-image {
+      width: 60%;
+      /* Chiều rộng bằng 100% của phần tử chứa */
+      height: auto;
+      /* Chiều cao tự động để giữ tỷ lệ khung hình */
+      max-height: 300px;
+      /* Chiều cao tối đa để hình ảnh không quá lớn */
+      object-fit: cover;
+      /* Cắt hình ảnh để phù hợp với kích thước */
+      border-radius: 8px;
+      /* Bo tròn góc hình ảnh */
+      margin-bottom: 15px;
+      /* Khoảng cách dưới hình ảnh */
+    }
+
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 25px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div style="text-align: center;">
+      <h2 style="font-weight: 500;margin-bottom: 10px;margin-top: 150px;
+        border-bottom: 4px solid #ff4584;display: inline-block;letter-spacing: 1px;">
+        QUẢN LÝ TÀI KHOẢN </h2>
+    </div>
+
+    <!-- <a href="createCan.html"><button type="button" class="btn btn-primary">Thêm mới sản phẩm</button></a> -->
+    <br><br>
+    <table class="table table-hover">
+      <thead>
+       <tr> 
+          <th>Mã tài khoản</th>
+          <th>Tên tài khoản</th>
+          <th>Mật khẩu</th>
+          <!-- <th>Họ và tên</th>
+          <th>Tuổi</th> -->
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="listFood">
+       <!-- -- data sổ ra đây -->
+      </tbody>
+    </table>
+  </div>
+</body>
+<script>
+
+callAPIGet();
+  function callAPIGet() {
+    $.ajax({
+      url: "https://localhost:44384/api/Login/getlist",
+      type: "GET",
+      contentType: "application/json",
+      success: function (response) { // đang là 1 list
+        var str = "";
+        $.each(response, function (i, item) {
+          str += `<tr>
+                   <td>${item.id}</td>
+                   <td>${item.userName}</td>
+                    <td>${item.password}</td>
+                    
+                     <td>Xem chi tiết</td>
+              </tr>`;
+        });
+        document.getElementById("listFood").innerHTML = str;
+      },
+      error: function (xhr, status, error) {
+        console.error("Có lỗi xảy ra khi gửi yêu cầu:", error);
+      },
+    });
+  }
+
+</script>
+
+</html>

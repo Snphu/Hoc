@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Trang Đăng Ký</title>
+    <style>
+        body {
+          background-image: url('img/Background-login.jpg');
+          background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="margin-top: 280px;">
+        <div class="row">
+
+          <div class="col-4">
+        </div>
+
+        <div class="col-4" >
+            <h2 style="text-align: center;margin-bottom: 40px;"> Đăng Ký Tài Khoản</h2>
+            <div class="input-group mb-3">
+                <span style="width: 96px;" class="input-group-text">Họ và Tên</span>
+                <input type="text" class="form-control" placeholder="Họ và Tên" id="name">
+            </div>
+            <p id="error" style="color: red;display: none;margin-left: 20px;">Hãy nhập tên của bạn</p>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Tài Khoản</span>
+                <input type="text" class="form-control" placeholder="Tên tài khoản" id="username">
+            </div>
+            <p id="error1" style="color: red;display: none;margin-left: 20px;">Hãy nhập tên tài khoản</p>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Mật khẩu</span>
+                <input type="text" class="form-control" placeholder="Mật khẩu" id="password">
+            </div>
+            <p id="error2" style="color: red;display: none;margin-left: 20px;">Hãy nhập mật khẩu</p>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Nhập lại MK</span>
+                <input type="text" class="form-control" placeholder="Hãy nhập lại mật khẩu" id="repassword">
+            </div>
+            <p id="error3" style="color: red;display: none;margin-left: 20px;">Hãy nhập lại mật khẩu</p>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Số điện thoại</span>
+                <input type="text" class="form-control" placeholder="Hãy nhập số điện thoại" id="phone">
+            </div>
+            <p id="error4" style="color: red;display: none;margin-left: 20px;">Hãy nhập số điện thoại</p>
+
+            <div class="input-group mb-3">
+                <span style="width: 125px;" class="input-group-text">Địa chỉ</span>
+                <input type="text" class="form-control" placeholder="Hãy nhập địa chỉ" id="address">
+            </div>
+            <p id="error5" style="color: red;display: none;margin-left: 20px;">Hãy nhập địa chỉ của bạn</p>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Địa chỉ G-mail</span>
+                <input type="text" class="form-control" placeholder="Hãy nhập G-mail của bạn" id="mail">
+            </div>
+            <p id="error6" style="color: red;display: none;margin-left: 20px;">Hãy nhập địa chỉ G-mail</p>
+
+            <div style="text-align: center;">
+                <button style="width: 418px;" type="button" class="btn btn-success" onclick="DangKy()">Đăng Ký</button>
+                <p id="error7" style="color: red;display: none;margin-left: 20px;">Tên tài khoản và mật khẩu chưa đúng</p>
+            </div>
+            <a href="#" style="color: black;text-decoration: none;"> Bạn đã có tài khoản ?</a> 
+            <a href="dangky.html" style="text-decoration: none;color: black">Đăng Ký</a>
+            </div>
+
+        </div>
+
+        <div class="col-4">
+           
+        </div>
+        </div>
+      </div>
+</body>
+
+<script>
+
+
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+camera.position.z = 5;
+
+   function DangKy() {
+    let name = document.getElementById('name').value.trim();
+    let username = document.getElementById('username').value.trim();
+    let password = document.getElementById('password').value.trim();
+    let repassword = document.getElementById('repassword').value.trim();
+    let phone = document.getElementById('phone').value.trim();
+    let address = document.getElementById('address').value.trim();
+    let mail = document.getElementById('mail').value.trim();
+
+    // Reset all error messages
+    document.getElementById('error').style.display = "none";
+    document.getElementById('error1').style.display = "none";
+    document.getElementById('error2').style.display = "none";
+    document.getElementById('error3').style.display = "none";
+    document.getElementById('error4').style.display = "none";
+    document.getElementById('error5').style.display = "none";
+    document.getElementById('error6').style.display = "none";
+    document.getElementById('error7').style.display = "none";
+
+    let valid = true;
+
+    if (name === "") {
+        document.getElementById('error').style.display = "block";
+        valid = false;
+    }
+
+    if (username === "") {
+        document.getElementById('error1').style.display = "block";
+        valid = false;
+    }
+
+    if (password === "") {
+        document.getElementById('error2').style.display = "block";
+        valid = false;
+    } else if (password.length < 6) {
+        document.getElementById('error2').innerText = "Mật khẩu phải có ít nhất 6 ký tự";
+        document.getElementById('error2').style.display = "block";
+        valid = false;
+    }
+
+    if (repassword === "") {
+        document.getElementById('error3').style.display = "block";
+        valid = false;
+    } else if (repassword !== password) {
+        document.getElementById('error3').innerText = "Mật khẩu không khớp";
+        document.getElementById('error3').style.display = "block";
+        valid = false;
+    }
+
+    if (phone === "") {
+        document.getElementById('error4').style.display = "block";
+        valid = false;
+    } else if (!/^\d{10}$/.test(phone)) {
+        document.getElementById('error4').innerText = "Số điện thoại phải có 10 số";
+        document.getElementById('error4').style.display = "block";
+        valid = false;
+    }
+
+    if (address === "") {
+        document.getElementById('error5').style.display = "block";
+        valid = false;
+    }
+
+    if (mail === "") {
+        document.getElementById('error6').style.display = "block";
+        valid = false;
+    } else if (!/\S+@\S+\.\S+/.test(mail)) {
+        document.getElementById('error6').innerText = "Địa chỉ email không hợp lệ";
+        document.getElementById('error6').style.display = "block";
+        valid = false;
+    }
+}
+
+</script>
+</html>
+
+<!-- // HỌ TÊN, TUỔI, TÊN TK, PASSWORD, REPASSSWORD,SDT,DIACHI,GMAIL -->
+<!-- rỗng, báo lỗi nếu k phải định dạng email, báo lỗi khi sdt ko có đủ 10 số, báo lỗi password ko đủ 6 kí tự -->

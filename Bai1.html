@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Bai 1</title>
+</head>
+<body>
+    <p> Số thứ nhất </p> <input type="text" id="inputA">
+    <p> Số thứ hai </p><input type="text" id="inputB">
+    <button onclick="TinhTong()">Tính</button>
+</body>
+<script>
+    function TinhTong() 
+    {
+        let a = document.getElementById('inputA').value;
+        let b = document.getElementById('inputB').value; 
+
+
+        if( a=="" && b=="")
+        {
+            alert("Phải nhập cả 2 số");
+            return;
+        }
+        else if( a == "") 
+        {
+            alert("Phải nhập số thứ nhất");
+            return;
+        }
+        else if( b == "") 
+        {
+            alert("Phải nhập số thứ hai");
+            return;
+        }    
+        // else
+        // // {
+        // //     let tong = 0;
+
+        // //     for (let count = a; count <= a; count++)
+        // //     {
+        // //         tong = tong + a; 
+        // //     }    
+
+        // //     for (let count = b; count <= b; count++)
+        // //     {
+        // //         tong = tong + b; 
+        // //     }    
+
+        //     alert(a+b);
+        // }
+        alert(a+b);
+    }
+
+// let a = "5";
+// let b = "7";
+// let tong = +a + +b; // tong sẽ là 12 (số), không phải "57" (chuỗi)
+ 
+    
+        // cách 2
+// if ( a == "" || b == "") 
+//     {
+//         alert("Phải nhập số")
+//         return;
+//     }
+
+
+// tham khảo
+// chuyển đổi giá trị input thành số 
+//     let inputA = parseFloat(a)
+//     let inputB = parseFloat(b)
+
+// //  Tính tổng
+//     let tong = inputA + inputB
+//     alert(tong)
+
+
+
+// câu hỏi:
+// chuyển đổi giá trị input thành số thì như thế nào  
+
+</script>
+</html>
+
+<!-- Ví dụ 1: Cho hai biến a và b, hãy viết chương trình tính tổng hai số a và b rồi in lên trình duyệt. --)
+ //Nếu không nhập vào 2 input thì sẽ alert ra và báo lỗi là "Hãy nhập số"
+ Còn nếu nhập đủ 2 số thì tính tổng bình thường
+ // thêm return ở dưới alert;

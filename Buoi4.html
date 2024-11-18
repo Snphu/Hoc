@@ -1,0 +1,110 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Học lập trình Javascript</title>
+  </head>
+  <body>
+    <p id="content1"></p>
+    <h2>Xin chào độc giả kungfutech</h2>
+    <input type="text" id="taikhoan"/>
+    <button onclick="CheckDangNhap()">Đăng nhập</button>
+    <span style=" color: red; display: none;" id="content"></span>
+    <!-- Hàm tương tác với người dùng alert, confirm, prompt -->
+
+  </body>
+  <script src="content.js"></script>
+  <script>
+    // alert("Say hello from kungfutech.edu.vn");
+    // const result = confirm("Bạn muốn tiếp tục sử dụng chương trình?");
+    // alert(result);
+    // const name = prompt("Nhập vào tên của bạn:", "Anonymous");
+    // alert(name);
+
+        // let a = 2;
+        // let b = 3;
+        // // mặc định là kiểm tra xem a có giá trị ko 
+        // if(a) 
+        // {
+        //     console.log("THõa mãn điều kiện");
+        // }
+        const age = 24;
+
+        let enoughAge;
+        if (age < 18) {
+          enoughAge = false;
+        } else {
+          enoughAge = true;
+        }
+        // Toán tử ba ngôi 
+        let a = 1;
+        var value1= true;
+        var value2= false;
+        const result = a == 1 ? value1 : value2;
+
+        const age1 = 24;
+
+        const enoughAge1 = age < 18 ? false : true;
+        console.log(enoughAge); // true
+
+         let a1 = 10;
+          let b1 = 20;
+          var result1;
+
+          if (a1 > 9) { // điều kiện ngược lại của điều kiện
+            result1 = "Small";
+          } 
+          else if(a1+ b1 > 30 ||  a1> 7 || a1> 20) {
+            result1 = "Big1";
+          }
+          else if(a1+ b1 == 30 || a1 > 5 ||  a1> 10) {
+            result1 = "Big2";
+          }
+          else {
+            result1 = "Big3";
+          }
+          console.log(result1);
+// -----------------------------------------
+          let test = 1;
+          result = test == 1 ? 2 : 3;
+          // = nhau
+          if(test == 1)
+          {
+            result = 2;
+          }
+          else
+          {
+            result =3;
+          }
+
+          result = a !== null && a !== undefined ? a : b;
+          if(a !== null && a !== undefined)
+          {
+            result = a;
+          }
+          else
+          {
+            result =b;
+          }
+
+          let test1;
+          let test2 = 2;
+          var result1 = test1 ?? test2;
+          console.log(result1);
+
+    function CheckDangNhap()
+    {
+        let taikhoan =  document.getElementById("taikhoan").value;
+        let b = 3;
+        if(taikhoan == "")
+        {
+            document.getElementById("content").innerHTML = "BẠN CHƯA NHẬP TÀI KHOẢN ";
+            document.getElementById("content").style.display="block";
+        }
+    }
+    
+  </script>
+</html>
+
+<!-- Tao thẻ p với id là content1, gán giá trị của thẻ p là "Xin chào mọi người" -->
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script></script>
+</head>
+<body>
+    
+</body>
+<script>
+    let browser = "Chrome";
+
+    switch (browser) {
+    case "IE":
+        console.log("Not support!");
+        break;
+    case "Chrome":
+    case "Firefox":
+    case "Safari":
+    case "Edge":
+        console.log("Support!");
+        break;
+    default:
+        console.log("Unknown browser!");
+    }
+
+
+
+    if( browser =="IE")
+    {
+        console.log("Not support!");
+    }
+    else if(browser =="Chrome" || browser =="Firefox" || browser =="Safari" || browser=="Edge")
+    {
+        console.log("Support!");
+    }
+    else
+    {
+        console.log("Unknown browser!");
+    }
+
+
+    let x = 2;
+
+    if (x === 1) {
+    console.log("x KHÔNG LÀ số nguyên tố");
+    } else if (x === 2) {
+    console.log("x LÀ số nguyên tố");
+    } else if (x === 3) {
+    console.log("x LÀ số nguyên tố");
+    } else if (x === 4) {
+    console.log("x KHÔNG LÀ số nguyên tố");
+    } else if (x === 5) {
+    console.log("x LÀ số nguyên tố");
+    } else if (x === 6) {
+    console.log("x KHÔNG LÀ số nguyên tố");
+    } else {
+    console.log("CHƯA RÕ!");
+    }
+
+    
+    switch (x) {
+        case 1: 
+            console.log("x KHÔNG LÀ số nguyên tố");
+            break;
+        case 2:
+        case 3:
+        case 5:
+            console.log("x LÀ số nguyên tố");
+            break;
+        case 4:
+        case 6:
+            console.log("x KHÔNG LÀ số nguyên tố");
+            break;
+        default:
+            console.log("CHƯA RÕ!");
+            break;
+    }
+    
+            
+    
+</script>
+</html>
